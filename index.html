@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profile Blog</title>
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+    </style>
+    <!-- Add font awesome icons -->
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="icon">
+                <div class="links">
+                    <p>Follow Us On:
+                        <a href="#" class="fa fa-facebook"></a>&nbsp;
+                        <a href="#" class="fa fa-twitter"></a>&nbsp;
+                        <a href="#" class="fa fa-google"></a>&nbsp;
+                        <a href="#" class="fa fa-wifi"></a>&nbsp;
+                        <a href="#" class="fa fa-linkedin"></a>&nbsp;
+                    </p>
+                </div>
+                <div class="profile">
+                    <li><span class="fa fa-envelope">&nbsp;&nbsp;Email: demo@example.com</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                    </li>
+                    <li><span class="fa fa-phone">&nbsp;&nbsp;Phone: 0237283744</span>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                    <li><span class="fa fa-">EN</span>&nbsp;
+                        <span class="fa fa-angle-down"></span>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="logo">
+                    <a href=""><img src="images/logo_1-view.png" ,alt="Logo"></a>
+                    <div><span><b>GRANT</b> <span class="highlight"><b>Foundation</span></b></span></div>
+                </div>
+                <ul>
+                    <li><a>Home</a></li>
+                    <li><a>About</a></li>
+                    <li><a>Project</a></li>
+                    <li><a>Events</a></li>
+                    <li><a>Blog</a></li>
+                    <li><a>Page</a></li>
+                    <li><a>Shortcodes</a></li>
+                </ul>
+                <a href="#"><button class="donate-button" type="submit">DONATE</button></a>
+            </div>
+
+        </nav>
+        <div>
+            <div>
+                <span class="fa fa-gear setting"></span>
+            </div>
+            <div>
+                <span class="fa fa-angle-left left-slide"></span>
+            </div>
+            <div>
+                <span class="fa fa-angle-right right-slide"></span>
+            </div>
+        </div>
+        <div class="img"></div>
+        <div class="box">
+
+            <p class="title"><b>WE CAN HELP SOMEONE</b></p><br>
+            <p class="sub_title"> Lorem ipsum dotor sit amet, consectetur adipiscing elit.
+                Nunc quis ante commoco , dictum lectus euecipit. Quisque nec allamcorper elit, nec fermentum metus.</p>
+            <br>
+            <a href="#"><button class="action-button">DONATE NOW</button></a>&nbsp;&nbsp;&nbsp;
+            <a href="#"><button class="action-button">LEARN MORE</button></a>
+        </div>
+    </header>
+
+    <body>
+        <section>
+            <div class="grid-cont">
+                <div id="tb1" class="column"></div>
+            </div>
+            <script>
+                fetch("template.json")
+                    .then(response => response.json())
+                    .then(data => {
+                        var sz = data.posts.length;
+                        let start = 0;
+                        let end = 2;
+                        for (var i = start; i <= end; i++) {
+                            let vtitle = data.posts[i % sz].title;
+                            let vdesc = data.posts[i % sz].desc;
+                            let vimg = 'images/blog_pic_' + (i % 3).toString() + '.jpg';
+                            let vcategory = data.posts[i % sz].category;
+                            let vdatetime = data.posts[i % sz].datetime;
+                            let vauthor = data.posts[i % sz].author;
+                            let vcomment_count = data.posts[i % sz].comment_count;
+
+                            document.querySelector("#tb1").innerHTML += `
+                                    <div class="card">
+                                        <div class="text-block">
+                                            <span><b>24 MAY</b></span>
+                                        </div>
+                                        <img src="${vimg}" alt="">
+                                        <div class="intro">
+                                            <div class="space-bet">
+                                                <span>
+                                                    <i class="fa fa-user">
+                                                        By: ${vauthor} </i>
+                                                </span>
+                                                <span>
+                                                    <i class="fa fa-heart">&nbsp;15</i>
+                                                    <span>|</span>
+                                                    <i class="fa fa-comment">&nbsp;${vcomment_count}</i>
+                                                </span>
+                                            </div><br><br>
+                                            <h3>${vtitle}</h3><br>
+                                            <h5>${vcategory}</h5><br>
+                                            <h4>${vdesc}</h4><br><br>
+                                            <a href="#">Read more</a>
+                                        </div>
+                                    </div>
+                                    `;
+                        }
+                    });
+            </script>
+        </section>
+    </body>
+    <footer>
+
+        <body class="grid-container">
+            <div class="row">
+                <div class="column2">
+                    <h4>ABOUT US</h4>
+                    <hr><br>
+                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Nulla id tincidunt risus.</span>
+                    <br><br>
+                    <h4>CONTACT US</h4><br>
+                    <span>Phone: 0237283744</span><br><br>
+                    <span>Email: demo@example.com</span><br><br>
+                    <span>Address: Your address goes here</span>
+                </div>
+                <div class="column1">
+                    <h4>OUR PROJECT</h4>
+                    <hr><br>
+                    <span class="fa fa-angle-right">&nbsp;Water Surve</span><br><br>
+                    <span class="fa fa-angle-right">&nbsp;Education For All</span><br><br>
+                    <span class="fa fa-angle-right">&nbsp;Treatment</span><br><br>
+                    <span class="fa fa-angle-right">&nbsp;Food Serving</span><br><br>
+                    <span class="fa fa-angle-right">&nbsp;Cloth</span><br><br>
+                    <span class="fa fa-angle-right">&nbsp;Shelter Project</span>
+                </div>
+                <div class="column1">
+                    <h4>QUICK LINK</h4>
+                    <hr><br>
+                    <span class="fa fa-angle-right">&nbsp;Causes</span><br><br>
+                    <span class="fa fa-angle-right">&nbsp;Projects</span><br><br>
+                    <span class="fa fa-angle-right">&nbsp;Gallery</span><br><br>
+                    <span class="fa fa-angle-right">&nbsp;Terms of Use</span><br><br>
+                    <span class="fa fa-angle-right">&nbsp;Legal Disclaimer</span><br><br>
+                    <span class="fa fa-angle-right">&nbsp;Privacy Policy</span>
+                </div>
+                <div class="column2">
+                    <h4>NEWSLETTER</h4>
+                    <hr><br>
+                    <span>Select your newsletters, enter your email address, and click "Subscribe"</span><br><br>
+                    <div>
+                        <input type="email" placeholder="Email Address" id="email" style="margin-right: 0px;">
+                        <button class="fa fa-envelope button" type="submit"></button>
+                    </div>
+                </div>
+            </div>
+        </body>
+        <article>
+            <div class="foot">
+                <div class="column1">
+                    <span>&#169; 2022 GRANT Made with &#10084; by Shruti Garg</span>
+                </div>
+                <div class="profile column1"><a href="#" class="fa fa-facebook"></a>&nbsp;
+                    <a href="#" class="fa fa-twitter"></a>&nbsp;
+                    <a href="#" class="fa fa-google"></a>&nbsp;
+                    <a href="#" class="fa fa-wifi"></a>&nbsp;
+                    <a href="#" class="fa fa-linkedin"></a>
+                </div>
+            </div>
+        </article>
+    </footer>
