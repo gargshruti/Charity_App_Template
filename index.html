@@ -83,6 +83,7 @@
         <section>
             <div class="grid-cont">
                 <div id="tb1" class="column"></div>
+                <div class="cards"></div>
             </div>
             <script>
                 fetch("template.json")
@@ -91,7 +92,7 @@
                         var sz = data.posts.length;
                         let start = 0;
                         let end = 2;
-                        for (var i = start; i <= end; i++) {
+                        for (var i = start; i < sz; i++) {
                             let vtitle = data.posts[i % sz].title;
                             let vdesc = data.posts[i % sz].desc;
                             let vimg = 'images/blog_pic_' + (i % 3).toString() + '.jpg';
@@ -105,7 +106,7 @@
                                         <div class="text-block">
                                             <span><b>24 MAY</b></span>
                                         </div>
-                                        <img src="${vimg}" alt="">
+                                            <img src="${vimg}" alt="">
                                         <div class="intro">
                                             <div class="space-bet">
                                                 <span>
@@ -130,6 +131,21 @@
             </script>
         </section>
     </body>
+    <div>
+        <div class="grid-container">
+            <div class="heading">
+                <h1>OUR <span class="highlight">SPONSORS</span></h1>
+                <div class="row">
+                    <div class="column"><img src="images/sponsor_logo_5.jpg"></div>
+                    <div class="column"><img src="images/sponsor_logo_3.jpg"></div>
+                    <div class="column"><img src="images/sponsor_logo_4.png"></div>
+                    <div class="column"><img src="images/sponsor_logo_2.jpg"></div>
+                    <div class="column"><img src="images/sponsor_logo_8.png"></div>
+                    <div class="column"><img src="images/sponsor_logo_6.jpg"></div>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer>
 
         <body class="grid-container">
@@ -174,7 +190,6 @@
                     </div>
                 </div>
             </div>
-        </body>
         <article>
             <div class="foot">
                 <div class="column1">
@@ -189,3 +204,6 @@
             </div>
         </article>
     </footer>
+</body>
+
+</html>

@@ -165,9 +165,15 @@ nav .menu {
     font-size: 0.8em;
 }
 
-.column{
+.grid-cont .column{
     background-color: white;
-    display: flex;
+    display: grid;
+    margin: 0 auto;
+    max-width:500em;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:20px;
+    font-family: sans-serif;
     justify-content: space-between;
 }
 
@@ -315,4 +321,8 @@ span .highlight{
     padding-left: 88%;
     padding-top: 1%;
     padding-bottom: 1%;
+} 
+.grid-container .heading .row .column{
+    background-color: white;
+    justify-content: space-between;
 }
