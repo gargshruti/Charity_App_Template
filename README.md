@@ -1,1 +1,1 @@
-# js_template
+# Charity App 
